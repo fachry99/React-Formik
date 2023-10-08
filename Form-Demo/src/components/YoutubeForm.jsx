@@ -1,4 +1,13 @@
+import { useFormik } from "formik";
+
 function YoutubeForm() {
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      channel: "",
+    },
+  });
   return (
     <div>
       <form>
