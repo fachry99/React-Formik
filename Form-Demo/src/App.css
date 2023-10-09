@@ -22,3 +22,12 @@ input[type="email"] {
   border: 1px solid #ccc;
   border-radius: 0.25rem;
 }
+
+.form-control {
+  margin-bottom: 20px;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
