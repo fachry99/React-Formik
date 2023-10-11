@@ -8,12 +8,13 @@ import {
 } from "formik";
 import * as yup from "yup";
 import TextError from "./TextError";
+import { isValidElement } from "react";
 
 const initialValues = {
-  name: "",
-  email: "",
-  channel: "",
-  comments: "",
+  name: "Fachry",
+  email: "151Fachry@gmail.com",
+  channel: "codevolution",
+  comments: "ssss",
   address: "",
   social: {
     facebook: "",
@@ -48,6 +49,7 @@ function YoutubeForm() {
       initialValues={initialValues}
       validationSchema={validationSchema}
       onSubmit={onSubmit}
+      // validateOnMount
       // validateOnChange={false}
       // validateOnBlur={false}
     >
@@ -185,7 +187,9 @@ function YoutubeForm() {
             >
               visit fiedls
             </button>
-            <button type="submit">Submit</button>
+            <button type="submit" disabled={!(formik.dirty && formik.isValid)}>
+              Submit
+            </button>
           </Form>
         );
       }}
