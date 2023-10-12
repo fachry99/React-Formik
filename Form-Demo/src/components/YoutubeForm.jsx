@@ -11,10 +11,10 @@ import TextError from "./TextError";
 import { isValidElement } from "react";
 
 const initialValues = {
-  name: "Fachry",
-  email: "151Fachry@gmail.com",
-  channel: "codevolution",
-  comments: "ssss",
+  name: "",
+  email: "",
+  channel: "",
+  comments: "",
   address: "",
   social: {
     facebook: "",
@@ -24,8 +24,10 @@ const initialValues = {
   phNumbers: [""],
 };
 
-const onSubmit = (values) => {
+const onSubmit = (values, OnSubmitProps) => {
   console.log("Form data", values);
+  console.log("submit props", OnSubmitProps);
+  OnSubmitProps.setSubmitting(false);
 };
 
 const validationSchema = yup.object({
@@ -187,7 +189,10 @@ function YoutubeForm() {
             >
               visit fiedls
             </button>
-            <button type="submit" disabled={!(formik.dirty && formik.isValid)}>
+            <button
+              type="submit"
+              disabled={!formik.isValid || formik.isSubmitting}
+            >
               Submit
             </button>
           </Form>
