@@ -42,6 +42,7 @@ const onSubmit = (values, OnSubmitProps) => {
   console.log("Form data", values);
   console.log("submit props", OnSubmitProps);
   OnSubmitProps.setSubmitting(false);
+  OnSubmitProps.resetForm();
 };
 
 const validationSchema = yup.object({
@@ -80,7 +81,6 @@ function YoutubeForm() {
               <Field type="text" name="name" id="name" />
               <ErrorMessage name="name" component={TextError} />
             </div>
-
             <div className="form-control">
               <label htmlFor="email">E-mail</label>
               <Field type="email" name="email" id="email" />
@@ -88,7 +88,6 @@ function YoutubeForm() {
                 {(errorMsg) => <div className="error">{errorMsg}</div>}
               </ErrorMessage>
             </div>
-
             <div className="form-control">
               <label htmlFor="channel">Channel</label>
               <Field
@@ -99,7 +98,6 @@ function YoutubeForm() {
               />
               <ErrorMessage name="channel" />
             </div>
-
             <div className="form-control">
               <label htmlFor="comments">Comments</label>
               <Field
@@ -110,7 +108,6 @@ function YoutubeForm() {
               />
               <ErrorMessage name="comments" component={TextError} />
             </div>
-
             <div className="form-control">
               <label htmlFor="address">Address</label>
               <FastField name="address">
@@ -128,27 +125,22 @@ function YoutubeForm() {
                 }}
               </FastField>
             </div>
-
             <div className="form-control">
               <label htmlFor="facebook">Facebook profile</label>
               <Field type="text" name="social.facebook" id="facebook" />
             </div>
-
             <div className="form-control">
               <label htmlFor="twitter">Twitter profile</label>
               <Field type="text" name="social.twitter" id="twitter" />
             </div>
-
             <div className="form-control">
               <label htmlFor="primaryPh">Primary phone number</label>
               <Field type="text" name="phoneNumbers[0]" id="primaryPh" />
             </div>
-
             <div className="form-control">
               <label htmlFor="secondaryPh">Secondary phone number</label>
               <Field type="text" name="phoneNumbers[1]" id="secondaryPh" />
             </div>
-
             <div className="form-control">
               <label>List of phone numbers</label>
               <FieldArray name="phNumbers">
@@ -176,7 +168,6 @@ function YoutubeForm() {
                 }}
               </FieldArray>
             </div>
-
             {/* <button
               type="button"
               onClick={() => formik.validateField("coments")}
@@ -208,6 +199,7 @@ function YoutubeForm() {
             <button type="button" onClick={() => setFormValues(savedValues)}>
               Load Saved Data
             </button>
+            <button type="reset">Reset</button> {/* reset formik form */}
             <button
               type="submit"
               disabled={!formik.isValid || formik.isSubmitting}
