@@ -1,18 +1,20 @@
+import Input from "./Input";
+
 function FormikControl(props) {
   const { control, ...rest } = props;
   switch (control) {
     case "input":
-      return <InputControl {...rest} />;
-    case "textarea":
-      return <TextareaControl {...rest} />;
-    case "select":
-      return <SelectControl {...rest} />;
-    case "radio":
-      return <RadioControl {...rest} />;
-    case "checkbox":
-      return <CheckboxControl {...rest} />;
-    case "date":
-      return <DateControl {...rest} />;
+      return <Input {...rest} />;
+    // case "textarea":
+    //   return <Textarea {...rest} />;
+    // case "select":
+    //   return <Select {...rest} />;
+    // case "radio":
+    //   return <Radio {...rest} />;
+    // case "checkbox":
+    //   return <Checkbox {...rest} />;
+    // case "date":
+    //   return <Date {...rest} />;
     default:
       return null;
   }
