@@ -4,13 +4,20 @@
 }
 
 label {
-  display: block;
-  margin-bottom: 0.5rem;
+  font-weight: bold;
+  display: flex;
+  margin-bottom: 5px;
+}
+
+input + label {
+  display: inline-flex;
+  margin-right: 20px;
   font-weight: bold;
 }
 
 input[type="text"],
 input[type="email"],
+input[type="password"],
 textarea,
 select {
   display: block;
