@@ -1,8 +1,8 @@
 import "./App.css";
 import EnrollmentForm from "./components/EnrollmentForm";
 // import FormikContainer from "./components/FormikContainer";
-import LoginForm from "./components/LoginForm";
-import RegistrationForm from "./components/RegistrationForm";
+// import LoginForm from "./components/LoginForm";
+// import RegistrationForm from "./components/RegistrationForm";
 // import YoutubeForm from "./components/YoutubeForm";
 
 function App() {
