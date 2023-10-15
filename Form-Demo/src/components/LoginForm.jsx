@@ -1,4 +1,3 @@
-import React from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import FormikControl from "./FormikControl";
@@ -28,13 +27,13 @@ function LoginForm() {
         return (
           <Form>
             <FormikControl
-              control="input"
+              control="chakrainput"
               type="email"
               label="Email"
               name="email"
             />
             <FormikControl
-              control="input"
+              control="chakrainput"
               type="password"
               label="Password"
               name="password"
